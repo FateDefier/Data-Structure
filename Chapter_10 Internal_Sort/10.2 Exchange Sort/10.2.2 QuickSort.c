@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../../../Code_Learning/Data Structure/Status.h"
 
 #define MAXSIZE 20
 typedef int KeyType;        // 定义关键字类型为整型
@@ -34,7 +33,7 @@ int Partition(SqList *L, int low, int high) {
 }
 
 // 递归快速排序
-void QuickSort (SqList *L, int low, int high) {
+void QuickSort(SqList *L, int low, int high) {
     if (low < high) {       // 递归终止条件
         int pivotloc = Partition(L, low, high);     // 用枢轴位置 pivotloc 将 [low, high] 一分为二
         QuickSort(L, low, pivotloc - 1);            // 对左子表递归排序

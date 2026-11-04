@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../../../Code_Learning/Data Structure/Status.h"
+#include <stdbool.h>
 
 #define MAXSIZE 20
 typedef int KeyType;        // 定义关键字类型为整型
@@ -24,17 +24,17 @@ void swap(RedType *t1, RedType *t2) {
 }
 
 // Bubble Sort：可以大的值沉底(右移)，也可以小的值浮出水面(左移)
-void BubbleSort (SqList *L) {
+void BubbleSort(SqList *L) {
     int m = L->length - 1;      // i 最大取 m，后移访问 r[i+1] 最大到 r[length]，故 m 初值为 length-1
-    int flag = TRUE;            // 是否上一趟发生过交换
+    int flag = true;            // 是否上一趟发生过交换
 
     // 上一趟没有发生交换时, flag = FALSE，退出循环，上一趟后序列已经有序，可提前结束
-    while (m > 0 && flag == TRUE) {         // m 递减到 0 说明所有元素已归位
+    while (m > 0 && flag == true) {         // m 递减到 0 说明所有元素已归位
         // 每次从第一个元素开始扫描，每一趟都有一个大元素沉底
-        flag = FALSE;                       // 先假设本轮不发生交换
+        flag = false;                       // 先假设本轮不发生交换
         for (int i = 1; i <= m; ++i) {       
             if (L->r[i].key > L->r[i + 1].key) {    // 不能等于，即等于时不交换，保证稳定性
-                flag = TRUE;
+                flag = true;
                 swap(&L->r[i], &L->r[i + 1]);
             }
         }

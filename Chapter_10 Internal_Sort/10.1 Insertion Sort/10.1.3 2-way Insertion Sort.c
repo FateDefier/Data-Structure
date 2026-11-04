@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../../../Code_Learning/Data Structure/Status.h"
 
 #define MAXSIZE 20
 typedef int KeyType;        // 定义关键字类型为整型

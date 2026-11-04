@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../../../Code_Learning/Data Structure/Status.h"
 
 #define MAXSIZE 20
 typedef int KeyType;        // 定义关键字类型为整型
@@ -16,7 +15,7 @@ typedef struct {
     int length;             // 顺序表长度
 }SqList;
 
-void BInsertSort (SqList *L) {
+void BInsertSort(SqList *L) {
     for (int i = 2; i <= L->length; ++i) {
         if (L->r[i].key < L->r[i - 1].key) {
             L->r[0] = L->r[i];
